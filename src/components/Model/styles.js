@@ -11,7 +11,7 @@ export const Container = styled.div`
 
   .ar-model {
     max-width: 600px;
-    background-color: #f5f5f5;
+    background-color: ${props => props.theme.colors.mainBackground};
     box-shadow: 3px 2px 6px rgba(0, 0, 0, 0.5);
   }
   model-viewer {

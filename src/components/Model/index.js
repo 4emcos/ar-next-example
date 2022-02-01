@@ -3,19 +3,14 @@ import { Container } from './styles'
 import '@google/model-viewer'
 
 export default function Model() {
-  const [modelViewer, setModelViewer] = useState(null)
-  const handleModelLoad = () => {
-    if (modelViewer) {
-      setInterval(() => {
-        modelViewer.animationName =
-          modelViewer.animationName === 'Running' ? 'Wave' : 'Running'
-      }, 1400.0)
-    }
-  }
-
   useEffect(() => {
-    setModelViewer(document.getElementById('ar-model-object'))
-    handleModelLoad()
+    const modelViewer = document.getElementById('ar-model-object')
+    const handleChargeAnimation = setInterval(() => {
+      modelViewer.animationName =
+        modelViewer.animationName === 'Running' ? 'Wave' : 'Running'
+    }, 1500)
+
+    return () => clearInterval(handleChargeAnimation)
   })
 
   return (

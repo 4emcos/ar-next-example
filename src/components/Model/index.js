@@ -9,7 +9,7 @@ export default function Model() {
       setInterval(() => {
         modelViewer.animationName =
           modelViewer.animationName === 'Running' ? 'Wave' : 'Running'
-      }, 1600.0)
+      }, 1400.0)
     }
   }
 
